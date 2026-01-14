@@ -67,7 +67,13 @@ export const useInventoryData = (facilityId?: number) => {
   const [error, setError] = useState<string | null>(null);
 
   const fetchInventoryData = useCallback(async () => {
-    if (!facilityId) return;
+    if (!facilityId) {
+      setLoading(false);
+      setBalances([]);
+      setTransactions([]);
+      setConsumption([]);
+      return;
+    }
     
     try {
       setLoading(true);
