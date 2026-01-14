@@ -3248,7 +3248,7 @@ export type Database = {
         }[]
       }
       get_current_user_role: {
-        Args: Record<PropertyKey, never>
+        Args: never
         Returns: Database["public"]["Enums"]["app_role"]
       }
       get_dashboard_inventory_stats: {
@@ -3321,26 +3321,17 @@ export type Database = {
         }
         Returns: boolean
       }
-      is_admin: {
-        Args: { _user_id: string }
-        Returns: boolean
-      }
+      is_admin: { Args: { _user_id: string }; Returns: boolean }
       recompute_request_totals: {
         Args: { p_request_id: string }
         Returns: undefined
       }
-      refresh_procurement_summary: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
+      refresh_procurement_summary: { Args: never; Returns: undefined }
       reject_role_request: {
         Args: { request_id: string; reviewer_notes?: string }
         Returns: undefined
       }
-      submit_rrf: {
-        Args: { p_rrf_id: string }
-        Returns: undefined
-      }
+      submit_rrf: { Args: { p_rrf_id: string }; Returns: undefined }
     }
     Enums: {
       admin_level: "facility" | "woreda" | "zone" | "regional" | "national"
